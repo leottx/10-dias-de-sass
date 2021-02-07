@@ -8,6 +8,7 @@ Sass é tanto uma linguagem como uma ferramenta. O objetivo de Sass é cobrir al
 
 Sass lê um arquivo no formato .scss e o converte para um arquivo .css:
 
+![Como Sass funciona](sass-blog-post-image01.jpg)
 
 
 ## Como usar esse repositório?
@@ -43,6 +44,7 @@ Sass lê um arquivo no formato .scss e o converte para um arquivo .css:
 
 ## Como instalar Sass
 
+1. [Lobsters](https://lobste.rs/)
 1. [WhatsApp](https://www.whatsapp.com/features/)
 1. [IGDB](https://www.igdb.com/discover)
 1. [Dribbble](https://dribbble.com/)
