@@ -20,7 +20,8 @@ Sass lê um arquivo no formato .scss e o converte para um arquivo .css:
     1. Crie um diretório `src`
     1. Crie um diretório `static`
     1. Crie um diretório `public`
-    1. Instale a dependenência `http-server` com `npm install --save-dev http-server`: https://github.com/http-party/http-server
+    1. Instale `sass` como dependência do seu projeto: `npm install --save-dev sass`.
+    1. Instale a dependência `http-server` com `npm install --save-dev http-server`: https://github.com/http-party/http-server
     1. Dentro do `package.json` crie um script chamado `copy-static` que rode o comando `cp -r ./static/* ./public/` => copia tudo no diretório `static` para dentro do `public`
     1. Dentro do `package.json` crie um script chamado `build-scss` que rode o comando `sass ./src/style.scss ./public/style.css`
     1. Dentro do `package.json` crie um script chamado `build` que rode o comando `npm run copy-static && npm run build-scss`
@@ -43,7 +44,11 @@ Sass lê um arquivo no formato .scss e o converte para um arquivo .css:
 - **Não** faça o site responsivo. Foque apenas em fazer com que ele funcione no navegador de um computador.
 
 
-## Como instalar Sass
+## Documentação Sass
+
+https://sass-lang.com/guide
+
+## Projetos
 
 1. [Lobsters](https://lobste.rs/)
 1. [WhatsApp](https://www.whatsapp.com/features/)
