@@ -20,14 +20,16 @@ Sass lê um arquivo no formato .scss e o converte para um arquivo .css:
     1. Crie um diretório `src`
     1. Crie um diretório `static`
     1. Crie um diretório `public`
+    1. Instale `rimraf` como dependência do seu projeto: `npm install --save-dev rimraf`: https://www.npmjs.com/package/rimraf
     1. Instale `sass` como dependência do seu projeto: `npm install --save-dev sass`.
     1. Instale a dependência `http-server` com `npm install --save-dev http-server`: https://github.com/http-party/http-server
     1. Dentro do `package.json` crie um script chamado `copy-static` que rode o comando `cp -r ./static/* ./public/` => copia tudo no diretório `static` para dentro do `public`
     1. Dentro do `package.json` crie um script chamado `build-scss` que rode o comando `sass ./src/style.scss ./public/style.css`
-    1. Dentro do `package.json` crie um script chamado `build` que rode o comando `npm run copy-static && npm run build-scss`
+    1. Dentro do `package.json` crie um script chamado `build` que rode o comando `rimraf ./public && mkdir public && npm run copy-static && npm run build-scss`
     1. Dentro do `package.json` crie um script chamado `serve` que rode o comando `http-server`
     1. Dentro do `package.json` crie um script chamado `run` que rode o comando `npm run build && npm run serve`
     1. Se precisar baixar imagens, coloque-as dentro do diretório `static`
+    1. No diretório do projeto do dia, crie um arquivo `.gitignore` e adicione os seguintes itens (um por linha): `./node_modules/*`, `./public/*`
 2. Seu arquivo index.html deve ser colocado no diretório `static`.
 4. Clone o site. **Limite seu tempo de trabalho: 4 horas no máximo!! Tente melhorar seu tempo gasto a cada dia.**. Caso as 4 horas se passem e você não tenha terminado o clone, pare mesmo assim. Reflita sobre o que poderia ter te ajudado a terminar mais rápido. Lembre-se: Não precisa ser perfeito, só precisa ser feito.
 5. Pare, pense e responda as 3 perguntas abaixo:
