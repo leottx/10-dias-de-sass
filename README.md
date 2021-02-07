@@ -1,4 +1,4 @@
-# 20-dias-de-sass
+# 20 dias de Sass
 
 De forma similar ao projeto de escrever 30 sites em 30 dias, esse projeto foca em aprender a usar Sass.
 
