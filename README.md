@@ -26,7 +26,7 @@ Sass lê um arquivo no formato .scss e o converte para um arquivo .css:
     1. Dentro do `package.json` crie um script chamado `copy-static` que rode o comando `cp -r ./static/* ./public/` => copia tudo no diretório `static` para dentro do `public`
     1. Dentro do `package.json` crie um script chamado `build-scss` que rode o comando `sass ./src/style.scss ./public/style.css`
     1. Dentro do `package.json` crie um script chamado `build` que rode o comando `rimraf ./public && mkdir public && npm run copy-static && npm run build-scss`
-    1. Dentro do `package.json` crie um script chamado `serve` que rode o comando `http-server`
+    1. Dentro do `package.json` crie um script chamado `serve` que rode o comando `http-server ./public`
     1. Dentro do `package.json` crie um script chamado `run` que rode o comando `npm run build && npm run serve`
     1. Se precisar baixar imagens, coloque-as dentro do diretório `static`
     1. No diretório do projeto do dia, crie um arquivo `.gitignore` e adicione os seguintes itens (um por linha): `./node_modules/*`, `./public/*`
