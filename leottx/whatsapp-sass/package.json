@@ -1,0 +1,16 @@
+{
+  "name": "whatsapp-sass",
+  "version": "1.0.0",
+  "description": "whatsapp page with sass",
+  "main": "./src/index.js\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[\u001b[3~\u001b[3~\u001b[3~\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Teixeira",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "rimraf": "^3.0.2",
+    "sass": "^1.32.7"
+  }
+}
