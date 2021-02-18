@@ -5,12 +5,17 @@ $main: #830000;
 $dark-grey: #777777;
 $darker-grey: #555555;
 $title: #2562DC;
-$tag-announce: #F9DDDE;
+$tag-advisor: #F9DDDE;
 $tag-advisor-border: #F0B2B8;
 $tag-theme: #FFFCD7;
 $tag-theme-border: #D5D458;
 $tag-media-type: #DDEBF9;
 $tag-media-type-border: #B2CCF0;
+$text-11: 1.1rem;
+$text-12: 1.2rem;
+$text-13: 1.3rem;
+$text-14: 1.4rem;
+$text-b: bold;
 
 html {
   font-size: 62.5%;
@@ -57,6 +62,7 @@ header {
   @extend %center-row;
   justify-content: space-between;
   padding: 2rem 0;
+  margin-bottom: .5rem;
   a {
     color: $dark-grey;
     font-size: 1.3rem;
@@ -88,8 +94,99 @@ nav {
 /* ---------
 POST
 ------------ */
+@mixin tag($background, $border) {
+  background-color: $background;
+  border: 1px solid $border;
+  border-radius: .4rem;
+  color: $darker-grey;
+  font-size: $text-11;
+  padding: .2rem;
+}
 
-section {
+%grid-2 {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: auto 1fr;
+  column-gap: 1.2rem;
+}
+
+section.post {
+  @extend %grid-2;
+  margin-bottom: 1.2rem;
+  .post__upvotes {
+    img {
+      height: 14px;
+      opacity: .4;
+      width: 13px;
+    }
+    p {
+      color: $darker-grey;
+    }
+  }
+  .post__main > * {
+    margin-right: 1rem;
+  }
+  .post__main {
+    @extend %center-row;
+    margin-bottom: .5rem;
+    h3 {
+      font-size: $text-14;
+      a {
+        color: $title;
+        font-weight: $text-b;
+      }
+    }
+    .post__tag--advisor {
+      @include tag($tag-advisor, $tag-advisor-border);
+    }
+    .post__tag--theme {
+      @include tag($tag-theme, $tag-theme-border);
+    }
+    .post__tag--media {
+      @include tag($tag-media-type, $tag-media-type-border);
+    }
+  }
+  .post__meta {
+    font-size: $text-12;
+    ul {
+      @extend %center-row;
+      li:first-child {
+        @extend %center-row;
+      }
+    }
+    li {
+      color: $dark-grey;
+    }
+    a {
+      color: $dark-grey;
+    }
+    img {
+      border-radius: 50%;
+      margin-right: .2rem;
+    }
+  }
+}
+
+section.extra {
+  @extend %grid-2;
+  font-size: $text-13;
+  margin-top: 3rem;
+  .block {
+    width: 13px;
+  }
+  .extra__wrap {
+    display: flex;
+    justify-content: space-between;
+    > a {
+      color: $darker-grey;
+      font-weight: $text-b;
+    }
+    ul {
+      @extend %center-row;
+      a {
+        color: $dark-grey;
+        font-weight: $text-b;
+        padding: 0 .5rem;
+      }
+    }
+  }
 }
