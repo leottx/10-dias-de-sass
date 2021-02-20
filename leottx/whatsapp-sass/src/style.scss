@@ -1,0 +1,251 @@
+/* -----------
+SMOOTH RESET
+--------------*/
+$main: rgba(30, 190, 165, .96);;
+$white: #ffffff;
+$card-a-bg: #FAF7EB;
+$card-b-bg: #D0E9EA;
+$card-c-bg: #F4F9FC;
+$footer-a-bg: #273443;
+$footer-b-bg: #232F3C;
+$text-link: #39B3ED;
+$text-grey: rgba(0, 0, 0, .5);
+$text-smooth-white: rgba(255, 255, 255, .6);
+$text-s1: 1.1rem;
+$text-s2: 1.3rem;
+$text-s3: 1.4rem;
+$text-s4: 2.4rem;
+$text-s5: 1.2rem;
+$text-w1: 300;
+$text-w2: 400;
+$text-space: 0.15rem;
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------
+LAYOUT
+-------------*/
+
+// Extends
+%center-row {
+  display: flex;
+  align-items: center;
+}
+
+%center-grid {
+  column-gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin: 0 auto;
+  max-width: 1050px;
+}
+
+// Mixins
+@mixin upper-text($color) {
+  color: $color;
+  text-transform: uppercase;
+}
+
+@mixin new-card($bg-color, $pt, $pr, $pb, $pl) {
+  @extend %center-row;
+  background-color: $bg-color;
+  flex-direction: column;
+  padding: $pt $pr $pb $pl;
+}
+
+header {
+  background-color: $main;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  nav {
+    @extend %center-row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1050px;
+    padding: 2.4rem 0;
+    ul {
+      @extend %center-row;
+      font-size: $text-s2;
+    }
+    li {
+      &:not(:last-child) {
+        margin-right: 6rem;
+      }
+      a {
+        @include upper-text($white);
+      }
+    }
+  }
+}
+
+// =========== MAIN ===========
+main {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding-top: 9rem;
+  section {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 1.2rem);
+    .card {
+      &:not(:last-child) {
+        margin-bottom: 2.4rem;
+      }
+      h3 {
+        @include upper-text($text-grey);
+        letter-spacing: $text-space;
+        margin-bottom: 1rem;
+      }
+      h2 {
+        font-size: $text-s4;
+        font-weight: $text-w1;
+        letter-spacing: 0.12rem;
+        margin-bottom: 2.4rem;
+      }
+      p {
+        font-size: $text-s3;
+        font-weight: $text-w2;
+        line-height: 2.1rem;
+        margin-bottom: 4.8rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .sec-a {
+    .card:first-child {
+      @include new-card($card-a-bg, 5.8rem, 8.5rem, 3.5rem, 8.5rem);
+      img {
+        display: block;
+        margin-bottom: 3.6rem;
+        max-width: 60%;
+      }
+    }
+    .card:nth-child(2) {
+      @include new-card($card-b-bg, 5.8rem, 8.5rem, 0, 8.5rem);
+      span {
+        margin-bottom: 2.4rem;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .card:nth-child(3) {
+      @include new-card($card-a-bg, 0, 8.5rem, 3.6rem, 8.5rem);
+      min-height: 560px;
+      img {
+        margin-bottom: 3.6rem;
+        width: 40%;
+      }
+    } 
+    .card:last-child {
+      @include new-card($card-b-bg, 5.8rem, 8.5rem, 0, 8.5rem );
+      img {
+        width: 40%;
+      }
+    }
+  }
+
+  .sec-b {
+    .card:first-child {
+      @include new-card($card-b-bg, 5.8rem, 8.5rem, 3.6rem, 8.5rem);
+      min-height: 600px;
+      img {
+        width: 45%;
+      }
+    }
+    .card:nth-child(2) {
+      @include new-card($card-c-bg, 5.8rem, 0, 0, 0);
+      p {
+        padding: 0 8.5rem;
+      }
+      a {
+        color: $text-link;
+      }
+      img {
+        width: 80%;
+        margin-left: auto;
+      }
+    }
+    .card:nth-child(3) {
+      @include new-card($card-c-bg, 5.8rem, 8.5rem, 3.6rem, 8.5rem);
+      .cript {
+        background-color: #77D7C8;
+        border-radius: 50%;
+        width: 275px;
+        height: 275px;
+        margin-bottom: 3rem;
+      }
+    }
+    .card:nth-child(4) {
+      @include new-card($card-b-bg, 0, 8.5rem, 0, 8.5rem);
+      min-height: 600px;
+      img {
+        width: 60%;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
+
+// ========== FOOTER ==========
+.footer__top {
+  background-color: $footer-a-bg;
+  padding: 4.8rem 0;
+}
+
+.footer__bottom {
+  background-color: $footer-b-bg;
+  font-size: $text-s3;
+  padding: 2.3rem 0;
+  span {
+    color: $text-smooth-white;
+  }
+}
+
+.footer__wrap {
+  @extend %center-grid;
+  h5 {
+    @include upper-text($text-smooth-white);
+    font-size: $text-s5;
+    letter-spacing: 0.08em;
+    margin-bottom: 2.2rem;
+  }
+  li {
+    font-size: $text-s3;
+    margin-bottom: .6rem;
+  }
+  a {
+    color:$white;
+  }
+}
