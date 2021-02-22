@@ -4,8 +4,17 @@
   "description": "website clone with sass",
   "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "copy-static": "cp -r ./static/* ./public/",
+    "build-scss": "sass ./src/style.scss ./public/style.css",
+    "build": "rimraf ./public && mkdir public && npm run copy-static && npm run build-scss",
+    "serve": "http-server ./public",
+    "run": "npm run build && npm run serve"
   },
   "author": "Leonardo Teixeira",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "rimraf": "^3.0.2",
+    "sass": "^1.32.8"
+  }
 }
