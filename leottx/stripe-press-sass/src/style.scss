@@ -1,0 +1,305 @@
+// STYLE INFOS
+$black: #000000;
+$white: #ffffff;
+$title: #3d424e;
+$body: #8898aa;
+$text-highlight: #CE2B2C;
+$text-link: #4B93CF; 
+$main-bg: #F3F6FA;
+$footer-bg: #E6EBF1;
+$red-tone: #CE2B2C;
+
+// SMOOTH RESET
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: undeline;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Spectral", serif;
+  height: 100%;
+  background-color: var(--main-bg);
+  box-sizing: border-box;
+  /* padding: 6rem; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+// LAYOUT
+
+// Mixins
+@mixin btn($color, $bg) {
+  background-color: $bg;
+  color: $color;
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 1.4rem 2.4rem 1rem;
+  text-decoration: none;
+}
+
+@mixin title($size) {
+  color: $title;
+  font-size: $size;
+  font-weight: 800;
+}
+
+// Extends
+%grid-2 {
+  display: grid;
+  column-gap: 6rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.container {
+  background-color: $main-bg;
+  padding-top: 6rem;
+  position: relative;
+  height: 100%;
+}
+
+.logo-wrapper {
+  height: 100%;
+  left: 50%;
+  max-width: 1240px;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.logo-box {
+  width: 100px;
+  height: 100%;
+  a {
+    display: flex;
+    top: 65px;
+    position: sticky;
+    img {
+      margin-left: auto;
+      width: 40px;
+    }
+  }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding-left: 16rem;
+  padding-right: 6rem;
+  width: 100%;
+}
+
+.body {
+  color: $body;
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+section { 
+  margin-bottom: 8rem;
+  &.book-a {
+    .btn {
+      @include btn($white, $red-tone);
+    }
+  }
+  a {
+    color: $text-link;
+  }
+  header {
+    @extend %grid-2;
+    margin-bottom: 6rem;
+  }
+  .content {
+    grid-column: 2;
+    h3 {
+      @include title(2rem);
+      margin-bottom: 1.9rem;
+    }
+    p {
+      color: $body;
+      font-size: 1.9rem;
+      font-weight: 500;
+    }
+  }
+  // cover
+  .cover{
+    h2 {
+      @include title(3.6rem);
+      margin-bottom: 4rem;
+    }
+    img {
+      margin-bottom: 6rem;
+      width: 100%;
+    }
+  }
+  // about
+  .about {
+    @extend %grid-2;
+    row-gap: 2.5rem;
+    margin-bottom: 6rem;
+  }
+  .book-title {
+    h3 {
+      @include title(2.8rem);
+      margin-bottom: 2rem;
+    }
+    h4 {
+      @include title(2rem);
+      color: $text-highlight;
+    }
+  }
+  .book-author {
+    display: flex;
+    h4 {
+      @include title(2rem);
+      align-self: flex-end;
+    }
+  }
+  .testimony {
+    h5 {
+      @include title(2.8rem);
+      margin-bottom: 3rem;
+    }
+  }
+  .track {
+    min-height: 425px;
+    position: relative;
+  }
+  .flex-3 {
+    display: flex;
+    height: 100%;
+    left: 0;
+    position: absolute;
+  }
+  .card {
+    background-color: rgb(226, 128, 128);
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    padding: 3.6rem;
+    width: 390px;
+    &:not(:last-of-type) {
+      margin-right: 5rem;
+    }
+    p {
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+  }
+  .blurb {
+    margin-top: auto;
+    span {
+      display: block;
+      padding-left: 2rem;
+      &:first-child {
+        font-size: 2.8rem;
+        font-weight: 800;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 5px;
+          transform: translateY(12px);
+          height: 1px;
+          width: 13px;
+          background: #fff;
+        }
+      } 
+    }
+  }
+}
+
+// FOOTER
+footer {
+  background-color: $footer-bg;
+  padding: 8rem 0 5rem 0;
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1240px;
+    padding-left: 16rem;
+    padding-right: 6rem;
+    width: 100%;
+  }
+  h2 {
+    @include title(2.8rem);
+    margin-bottom: 3rem;
+  }
+  .why-content {
+    margin-bottom: 8rem;
+    max-width: 63rem;
+    p:first-child {
+      margin-bottom: 3rem;
+    }
+  }
+  img {
+    margin-bottom: 8rem;
+    width: 100%;
+  }
+  h4 {
+    @include title(2.8rem);
+  }
+  a {
+    color: $text-link;
+    &:last-of-type {
+      font-size: 2rem;
+    }
+  }
+}
+
+.signup {
+  margin-bottom: 8rem;
+  margin-top: 2rem;
+  max-width: 63rem;
+  form {
+    display: flex;
+    margin-bottom: 1rem;
+    input[type="email"] {
+      border: none;
+      display: block;
+      padding: 1.5rem 3rem 1.2rem;
+      flex-grow: 1;
+      font-family: inherit;
+      font-size: 2rem;
+    }
+    input[type="email"]::placeholder {
+      color: $body;
+      opacity: .4;
+    }
+    button {
+      background-color: $body;
+      border: none;
+      color: $white;
+      display: block;
+      font-family: inherit;
+      font-size: 2rem;
+      font-weight: 800;
+      padding: 1.5rem 3rem 1.2rem;
+    }
+    p {
+      font-size: 1.4rem;
+      &:last-of-type {
+        margin-bottom: 6rem;
+      }
+    }
+  }
+}
