@@ -1,0 +1,169 @@
+// STYLE INFOS
+
+$dark-color: #111827;
+$btn-primary-bg: #4f46e5;
+$text-light: #d1d5b9;
+$input-bg: #374151;
+$main-bg: #f3f4f6;
+$white: #fff;
+
+
+//SMOOTH RESET
+
+html {
+  font-size: 62.5%;
+}
+  
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: normal;
+  background-color: $main-bg;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+// LAYOUT
+
+// Extends
+
+%center {
+  padding: 0 3.2rem;
+}
+
+%flex-center-y {
+  align-items: center;
+  display: flex;
+}
+
+header {
+  @extend %center;
+  background-color: $dark-color;
+  nav {
+    @extend %flex-center-y;
+    font-size: 1.4rem;
+    font-weight: 600;
+    height: 6.4rem;
+    justify-content: space-between;
+    ul {
+      display: flex;
+    }
+    a {
+      color: $text-light;
+      &.btn {
+        background-color: $btn-primary-bg;
+        border-radius: .6rem;
+        color: $white;
+        padding: .8rem 1.2rem;
+      }
+    }
+  }
+  .logo {
+    img {
+      height: 1.6rem;
+      max-width: 100%;
+      margin-right: 3.2rem;
+    }
+  }
+  .nav-main, .nav-sub {
+    @extend %flex-center-y;
+  }
+  .nav-main {
+    li {
+      margin-right: 3.2rem;
+    }
+  }
+  .nav-sub {
+    input[type="text"] {
+      color: $text-light;
+      background-color: $input-bg;
+      border: none;
+      border-radius: .6rem;
+      font-weight: 400;
+      padding: .8rem 1.2rem;
+    }
+    > *:not(:last-child) {
+      margin-right: 3.2rem;
+    }
+  }
+}
+
+// MAIN
+main {
+  @extend %center;
+
+  h1 {
+    color: $dark-color;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 4.8rem 0;
+    text-align: center;
+  }
+}
+
+.grid-topics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.6rem;
+}
+
+.card {
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px 0px rgba(0,0,0,0.06); 
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1), 0px 1px 2px 0px rgba(0,0,0,0.06);
+  display: flex;
+  overflow: hidden;
+  .icon {
+    align-items: center;
+    background-color: $main-bg;
+    display: flex;
+    padding: 1.6rem;
+    img {
+      height: 6.4rem;
+      width: 6.4rem;
+    }
+  }
+}
+
+.content {
+  background-color: $white;
+  padding: 1.5rem;
+  color: $dark-color;
+  line-height: 1.6;
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  p {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    opacity: .8;
+  }
+  ul {
+    display: flex;
+    font-size: 1.3rem;
+    li {
+      margin-right: 2.4rem;
+    }
+    a {
+      color: $dark-color;
+      opacity: .8;
+    }
+  }
+}
