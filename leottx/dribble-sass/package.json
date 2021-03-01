@@ -1,0 +1,17 @@
+{
+  "name": "dribble-sass",
+  "version": "1.0.0",
+  "description": "Dribbble clone with sass",
+  "main": "index.js",
+  "scripts": {
+    "copy-static": "cp -r ./static/* ./public/",
+    "build-scss": "sass ./src/style.scss ./public/style.css",
+    "build": "rimraf ./public && mkdir public && npm run copy-static && npm run build-scss"
+  },
+  "author": "Leonardo Teixeira",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "sass": "^1.32.8"
+  }
+}
