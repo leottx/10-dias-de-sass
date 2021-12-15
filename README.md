@@ -2,7 +2,7 @@
 
 ![badge done](https://img.shields.io/badge/status-done-success)
 
-De forma similar ao projeto de escrever 30 sites em 30 dias, esse projeto foca em aprender a usar Sass.
+De forma similar ao projeto de escrever 30 sites em 30 dias, esse projeto foca em aprender o pré-processador Sass.
 
 ## Como Sass funciona?
 
